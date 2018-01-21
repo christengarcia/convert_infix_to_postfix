@@ -69,7 +69,34 @@ namespace convert_infix_to_postfix
 
         static void Main(string[] args)
         {
-            
+            string infix = "";
+            string postfix = "";
+            if (args.Length == 1)
+            {
+                infix = args[0];
+                Convert(ref infix, out postfix);
+                System.Console.WriteLine("InFix  :\t" + infix);
+                System.Console.WriteLine("PostFix:\t" + postfix);
+            }
+            else
+            {
+                infix = "a+b*c-d";
+                Convert(ref infix, out postfix);
+                System.Console.WriteLine("InFix   :\t" + infix);
+                System.Console.WriteLine("PostFix :\t" + postfix);
+                System.Console.WriteLine();
+                infix = "a+b*c-d/e*f";
+                Convert(ref infix, out postfix);
+                System.Console.WriteLine("InFix   :\t" + infix);
+                System.Console.WriteLine("PostFix :\t" + postfix);
+                System.Console.WriteLine();
+                infix = "a-b/c*d-e--f/h*i++j-/k";
+                Convert(ref infix, out postfix);
+                System.Console.WriteLine("InFix   :\t" + infix);
+                System.Console.WriteLine("PostFix :\t" + postfix);
+                System.Console.WriteLine();
+                Console.ReadLine();
+            }
         }
     }
 }
